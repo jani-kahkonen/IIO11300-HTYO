@@ -1,0 +1,43 @@
+﻿<Application x:Class="IIO11300_HTYO.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:IIO11300_HTYO"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!-- Styles: http://www.wpf-tutorial.com/styles/using-styles/ -->
+
+        <!-- Explicit Styles -->
+        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Width" Value="100" />
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- Default Styles -->
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="LightGreen" />
+        </Style>
+
+        <Style TargetType="TabItem">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="25" />
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Height" Value="20" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="20" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="20" />
+        </Style>
+
+    </Application.Resources>
+</Application>
