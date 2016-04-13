@@ -1,0 +1,58 @@
+﻿<Window x:Class="IIO11300_HTYO.AccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IIO11300_HTYO"
+        mc:Ignorable="d"
+        Title="AccountWindow" Width="600" Height="400" ResizeMode="NoResize">
+    <Grid Style="{StaticResource BackgroundStyle}">
+        <TabControl Height="250" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TabItem Width="250" Header="Account">
+                <StackPanel x:Name="spAccount" Orientation="Horizontal">
+                    <StackPanel Width="250">
+                        <TextBlock Margin="10, 10" Text="Email:" />
+                        <TextBlock Margin="10, 10" Text="Pword:" />
+                        <TextBlock Margin="10, 10" Text="Fname:" />
+                        <TextBlock Margin="10, 10" Text="Lname:" />
+                        <TextBlock Margin="10, 10" Text="Rdate:" />
+                    </StackPanel>
+                    <StackPanel Width="250">
+                        <TextBlock Margin="10, 10" Text="{Binding Path=Email}" />
+                        <TextBlock Margin="10, 10" Text="{Binding Path=Pword}" />
+                        <TextBlock Margin="10, 10" Text="{Binding Path=Fname}" />
+                        <TextBlock Margin="10, 10" Text="{Binding Path=Lname}" />
+                        <TextBlock Margin="10, 10" Text="{Binding Path=Rdate}" />
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Width="250" Header="Items">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Width="125">
+                            <TextBlock Margin="10, 10" Text="Item ID:" />
+                            <TextBlock Margin="10, 10" Text="Rdate:" />
+                            <TextBlock Margin="10, 10" Text="IName:" />
+                            <Button x:Name="DelItem" Margin="10, 10" Height="20" Content="Del item" Click="DelItem_Click" />
+                        </StackPanel>
+                        <StackPanel x:Name="spItem" Width="125">
+                            <TextBlock x:Name="txtId" Margin="10, 10" Text="{Binding Path=Id}" />
+                            <TextBlock Margin="10, 10" Text="{Binding Path=Rdate}" />
+                            <TextBox x:Name="txtIname" Margin="10, 10" Height="16" Text="{Binding Path=Iname}" />
+                            <Button x:Name="AddItem" Margin="10, 10" Content="Add item" Click="AddItem_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="250">
+                        <ListBox x:Name="lstItem" Margin="10, 10" Height="175" ItemsSource="{Binding}" SelectionChanged="lstItem_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Iname}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

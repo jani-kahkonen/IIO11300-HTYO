@@ -4,40 +4,48 @@
              xmlns:local="clr-namespace:IIO11300_HTYO"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
-        <!-- Styles: http://www.wpf-tutorial.com/styles/using-styles/ -->
-
-        <!-- Explicit Styles -->
-        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
-            <Setter Property="Width" Value="100" />
+        <Style x:Key="BackgroundStyle" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="LightGreen" Offset="0.0"/>
+                        <GradientStop Color="Black" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
-
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="FontWeight" Value="Bold" />
+        <Style TargetType="TabControl">
+            <Setter Property="BorderThickness" Value="0" />
+            <Style.Resources>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="White"/>
+                </Style>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border">
+                                    <ContentPresenter x:Name="ContentSite" ContentSource="Header" Margin="10, 10" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="TextElement.FontSize" TargetName="ContentSite" Value="18" />
+                                        <Setter Property="BorderBrush" TargetName="Border" Value="Blue" />
+                                        <Setter Property="BorderThickness" TargetName="Border" Value="0, 0, 0, 1" />
+                                        <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="Blue" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter Property="TextElement.FontSize" TargetName="ContentSite" Value="18" />
+                                        <Setter Property="BorderBrush" TargetName="Border" Value="White" />
+                                        <Setter Property="BorderThickness" TargetName="Border" Value="0, 0, 0, 1" />
+                                        <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Style.Resources>
         </Style>
-
-        <!-- Default Styles -->
-        <Style TargetType="Grid">
-            <Setter Property="Background" Value="LightGreen" />
-        </Style>
-
-        <Style TargetType="TabItem">
-            <Setter Property="Width" Value="100" />
-            <Setter Property="Height" Value="25" />
-        </Style>
-
-        <Style TargetType="TextBlock">
-            <Setter Property="Height" Value="20" />
-        </Style>
-
-        <Style TargetType="TextBox">
-            <Setter Property="Height" Value="20" />
-        </Style>
-
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="20" />
-        </Style>
-
     </Application.Resources>
 </Application>
