@@ -30,15 +30,13 @@
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter Property="TextElement.FontSize" TargetName="ContentSite" Value="18" />
-                                        <Setter Property="BorderBrush" TargetName="Border" Value="Blue" />
+                                        <Setter Property="BorderBrush" TargetName="Border" Value="Green" />
                                         <Setter Property="BorderThickness" TargetName="Border" Value="0, 0, 0, 1" />
-                                        <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="Blue" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="False">
                                         <Setter Property="TextElement.FontSize" TargetName="ContentSite" Value="18" />
                                         <Setter Property="BorderBrush" TargetName="Border" Value="White" />
                                         <Setter Property="BorderThickness" TargetName="Border" Value="0, 0, 0, 1" />
-                                        <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="Black" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
