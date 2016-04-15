@@ -56,7 +56,7 @@ namespace IIO11300_HTYO
             try
             {
                 // Insert item.
-                BLAccount.InsertItem(txtIname.Text);
+                BLAccount.InsertItem(accountId, txtIname.Text);
 
                 // Update items.
                 lstItem.DataContext = BLAccount.GetItems(accountId);
@@ -71,8 +71,7 @@ namespace IIO11300_HTYO
         {
             try
             {
-                // Get selected item.
-                // Item selectedItem = (Item)spItem.DataContext;
+                // Get selected item. Item selectedItem = (Item)spItem.DataContext;
 
                 // Delete item.
                 BLAccount.DeleteItem(Convert.ToInt32(txtId.Text));

@@ -30,16 +30,18 @@
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Width="125">
-                            <TextBlock Margin="10, 10" Text="Item ID:" />
-                            <TextBlock Margin="10, 10" Text="Rdate:" />
-                            <TextBlock Margin="10, 10" Text="IName:" />
-                            <Button x:Name="DelItem" Margin="10, 10" Height="20" Content="Del item" Click="DelItem_Click" />
+                            <TextBlock Margin="10, 10" Height="18" Text="Item ID:" />
+                            <TextBlock Margin="10, 10" Height="18" Text="IName:" />
+                            <TextBlock Margin="10, 10" Height="18" Text="AName:" />
+                            <TextBlock Margin="10, 10" Height="18" Text="Rdate:" />
+                            <Button x:Name="DelItem" Margin="10, 10" Height="18" Content="Del item" Click="DelItem_Click" />
                         </StackPanel>
                         <StackPanel x:Name="spItem" Width="125">
-                            <TextBlock x:Name="txtId" Margin="10, 10" Text="{Binding Path=Id}" />
-                            <TextBlock Margin="10, 10" Text="{Binding Path=Rdate}" />
-                            <TextBox x:Name="txtIname" Margin="10, 10" Height="16" Text="{Binding Path=Iname}" />
-                            <Button x:Name="AddItem" Margin="10, 10" Content="Add item" Click="AddItem_Click" />
+                            <TextBlock x:Name="txtId" Margin="10, 10" Height="18" Text="{Binding Path=Id}" />
+                            <TextBox x:Name="txtIname" Margin="10, 10" Height="18" Text="{Binding Path=Iname}" />
+                            <TextBlock Margin="10, 10" Height="18" Text="{Binding Path=Aname}" />
+                            <TextBlock Margin="10, 10" Height="18" Text="{Binding Path=Rdate}" />
+                            <Button x:Name="AddItem" Margin="10, 10" Height="18" Content="Add item" Click="AddItem_Click" />
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Width="250">

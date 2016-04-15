@@ -15,13 +15,16 @@ namespace IIO11300_HTYO
         public string Iname { get; set; }
 
         public string Rdate { get; set; }
+
+        public string Aname { get; set; }
         #endregion
 
         #region CONSTUCTORS
-        public Item(string id, string iname, string rdate)
+        public Item(string id, string iname, string aname, string rdate)
         {
             this.Id = id;
             this.Iname = iname;
+            this.Aname = aname;
             this.Rdate = rdate;
         }
         #endregion
@@ -120,18 +123,18 @@ namespace IIO11300_HTYO
             }
         }
 
-        public static List<Item> GetItems(int id)
+        public static List<Item> GetItems(int accountId)
         {
             try
             {
                 List<Item> items = new List<Item>();
 
                 // Get items dataTable from DL.
-                DataTable dataTable = DLAccount.Select(id, null, null, null, null, null, "SELECT * FROM item");
+                DataTable dataTable = DLAccount.Select(accountId, null, null, null, null, null, "SELECT item.id, item.iname, account.email, item.rdate FROM item LEFT JOIN account ON account.id = item.account_id");
 
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    items.Add(new Item(dataRow[0].ToString(), dataRow[1].ToString(), dataRow[2].ToString()));
+                    items.Add(new Item(dataRow[0].ToString(), dataRow[1].ToString(), dataRow[2].ToString(), dataRow[3].ToString()));
                 }
 
                 return items;
@@ -142,12 +145,12 @@ namespace IIO11300_HTYO
             }
         }
 
-        public static void InsertItem(string iname)
+        public static void InsertItem(int accountId, string iname)
         {
             try
             {
-                // Insert item.
-                DLAccount.Insert(0, null, null, iname, null, DateTime.Now.ToString("yyyy.MM.dd H:mm:ss"), "INSERT INTO item VALUES (@Id, @Fname, @Rdate)");
+                // Insert item. WHERE id=@Id"
+                DLAccount.Insert(accountId, null, null, iname, null, DateTime.Now.ToString("yyyy.MM.dd H:mm:ss"), "INSERT INTO item (iname, rdate, account_id) VALUES (@Fname, @Rdate, @Id)");
             }
             catch (Exception exception)
             {
