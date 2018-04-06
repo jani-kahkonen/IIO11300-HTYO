@@ -1,7 +1,6 @@
 # IIO11300-HTYO
-Windows-ohjelmointi harjoitustyö kevät 2016. WPF-sovellus jossa käyttäjien rekisteröinti ja autentikointi, sovelluksella käyttäjä voi syöttää tietoa tietokantoihin.
+Windows-ohjelmointi harjoitustyö
+# Kuvaus
+WPF-sovellus jossa käyttäjän rekisteröinti ja autentikointi. Sovelluksella käyttäjä voi syöttää tuotteita tietokantaan.
 # Tekijä
 Jani Kähkönen
-# Raportti
-https://github.com/jani-kahkonen/IIO11300-HTYO/blob/master/IIO11300-Raportti.pdf
-
